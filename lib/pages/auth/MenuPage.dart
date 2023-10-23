@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/componentes/button.dart';
+import 'package:flutter_application_1/pages/auth/CampanhaPage.dart';
+import 'package:flutter_application_1/pages/auth/MagiasPage.dart';
+import 'package:flutter_application_1/pages/auth/PersonagemPage.dart';
 import 'AuthPage.dart';
 import 'LoginPage.dart';
 
@@ -35,7 +38,6 @@ class _MenuPageState extends State<MenuPage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Container(
-                      
                       child: Button(
                         text: 'CAMPANHA',
                         image: 'assets/montanha.png',
@@ -44,7 +46,9 @@ class _MenuPageState extends State<MenuPage> {
                             context,
                             MaterialPageRoute<void>(
                               builder: (BuildContext context) =>
-                                  const AuthPage(),
+                                  const CampanhaPage(
+                                base64Pdf: '',
+                              ),
                             ),
                           );
                         },
@@ -60,7 +64,15 @@ class _MenuPageState extends State<MenuPage> {
                       Button(
                         text: 'PERSONAGENS',
                         image: 'assets/assasin.png',
-                        function: () {},
+                        function: () {
+                          Navigator.pushReplacement<void, void>(
+                            context,
+                            MaterialPageRoute<void>(
+                              builder: (BuildContext context) =>
+                                  const PersonagemPage(),
+                            ),
+                          );
+                        },
                       ),
                     ],
                   ),
@@ -73,8 +85,40 @@ class _MenuPageState extends State<MenuPage> {
                       Button(
                         text: 'MAGIAS',
                         image: 'assets/livro.png',
-                        function: () {},
+                        function: () {
+                          Navigator.pushReplacement<void, void>(
+                            context,
+                            MaterialPageRoute<void>(
+                              builder: (BuildContext context) =>
+                                  const MagiasPage(),
+                            ),
+                          );
+                        },
                       ),
+                    ],
+                  ),
+                ),
+                Container(
+                  padding: EdgeInsets.only(top: 100),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      TextButton(
+                          onPressed: () {
+                            Navigator.pushReplacement<void, void>(
+                              context,
+                              MaterialPageRoute<void>(
+                                builder: (BuildContext context) =>
+                                    const AuthPage(),
+                              ),
+                            );
+                          },
+                          child: Text(
+                            "Sair",
+                            style: TextStyle(color: Colors.white, fontSize: 24),
+                            textAlign: TextAlign.center,
+                          )),
                     ],
                   ),
                 ),

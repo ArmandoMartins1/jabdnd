@@ -78,7 +78,7 @@ class _AuthPageState extends State<AuthPage> {
                         'assets/adventurer.png',
                       ),
                       const Text(
-                        'JOGADOR',
+                        'ENTRAR',
                         style: TextStyle(fontSize: 32),
                       ),
                     ],

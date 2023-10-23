@@ -23,7 +23,7 @@ class _RegPageState extends State<RegPage> {
           child: Stack(children: [
         Image(
           image: AssetImage(
-            'assets/fundo.png',
+            'assets/fundoestrelado.jpg',
           ),
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height,
